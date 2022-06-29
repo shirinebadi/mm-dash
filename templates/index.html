@@ -6,42 +6,14 @@
   </head>
   <body>
     <div class="top-list">
+      {% for movie in movies %}
       <div class="poster">
-        <img src="images/top1.PNG" alt="top1" />
+        <img src="{{ url_for('static',filename='images/top'+movie.id+'.PNG') }}"/>
         <p class="title">
-          <a href="movies/1/one.html">The Shawshank Redemption</a>
+          <a href="movies/1/one.html">{{movie.title}}</a>
         </p>
       </div>
-      <div class="poster">
-        <img src="images/top2.PNG" alt="top2" />
-        <p class="title">
-          <a href="movies/2/two.html">The Godfather</a>
-        </p>
-      </div>
-      <div class="poster">
-        <img src="images/top3.PNG" alt="top3" />
-        <p class="title">
-          <a href="movies/3/three.html">The Dark Knight</a>
-        </p>
-      </div>
-      <div class="poster">
-        <img src="images/top4.PNG" alt="top4" />
-        <p class="title">
-          <a href="movies/4/four.html">The Godfather part II</a>
-        </p>
-      </div>
-      <div class="poster">
-        <img src="images/top5.PNG" alt="top5" />
-        <p class="title">
-          <a href="movies/5/five.html">12 Angry Men</a>
-        </p>
-      </div>
-      <div class="poster">
-        <img src="images/top6.PNG" alt="top6" />
-        <p class="title">
-          <a href="movies/6/six.html">Schindler's List</a>
-        </p>
-      </div>
+      {% endfor %}
     </div>
   </body>
 </html>
