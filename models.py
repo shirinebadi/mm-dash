@@ -11,15 +11,6 @@ class Movie(db.Model):
     def __repr__(self):
         return "<Movie %r>" % self.title
 
-    def insert(title, info, star, director):
-        movie = Movie(title=title, info=info, star=star, director=director)
-
-        try:
-            db.session.add(movie)
-            db.session.commit()
-        except:
-            return 'There was an issue adding your task'
-
 if __name__ == "__main__":
     db.create_all()
     m = Movie()

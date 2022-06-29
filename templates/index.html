@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>MM_DASH</title>
-    <link href="../Front/css/style.css" rel="stylesheet" />
+    <link href="{{ url_for('static',filename='css/index.css') }}" rel="stylesheet" />
   </head>
   <body>
     <div class="top-list">
@@ -12,8 +12,7 @@
           src="{{ url_for('static',filename='images/top'+movie.id+'.PNG') }}"
         />
         <p class="title">
-          <a href="../Front/movies/{{movie.id}}/{{movie.id}}.html"
-            >{{movie.title}}</a
+          <a href="{{ url_for('idsearch',id = movie.id) }}">{{movie.title}}</a
           >
         </p>
       </div>

@@ -36,9 +36,11 @@ def main_page():
         movie.id = str(movie.id)
     return render_template('index.html', movies = movies)
 
-@app.route('/api/<int:id>')
-def search_by_id():
-    pass
+@app.route('/movies/<int:id>')
+def idsearch(id):
+    movie = Movie.query.filter_by(id = id).first()
+    movie.id = str(movie.id)
+    return render_template('movie.html', movie = movie)
 
 
 if __name__ == "__main__":
