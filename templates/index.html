@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MM_DASH</title>
+    <link href="../Front/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="top-list">
+      {% for movie in movies %}
+      <div class="poster">
+        <img
+          src="{{ url_for('static',filename='images/top'+movie.id+'.PNG') }}"
+        />
+        <p class="title">
+          <a href="../Front/movies/{{movie.id}}/{{movie.id}}.html"
+            >{{movie.title}}</a
+          >
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
