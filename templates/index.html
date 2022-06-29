@@ -2,15 +2,19 @@
 <html>
   <head>
     <title>MM_DASH</title>
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../Front/css/style.css" rel="stylesheet" />
   </head>
   <body>
     <div class="top-list">
       {% for movie in movies %}
       <div class="poster">
-        <img src="{{ url_for('static',filename='images/top'+movie.id+'.PNG') }}"/>
+        <img
+          src="{{ url_for('static',filename='images/top'+movie.id+'.PNG') }}"
+        />
         <p class="title">
-          <a href="movies/1/one.html">{{movie.title}}</a>
+          <a href="../Front/movies/{{movie.id}}/{{movie.id}}.html"
+            >{{movie.title}}</a
+          >
         </p>
       </div>
       {% endfor %}
