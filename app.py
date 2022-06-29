@@ -1,7 +1,11 @@
 import time
 from flask import Flask, jsonify, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+db = SQLAlchemy(app)
+
 
 @app.route('/api/health_check', methods=['GET'])
 def check_health():
@@ -11,7 +15,11 @@ def check_health():
 
 @app.route('/', methods=['GET'])
 def main_page():
-    return render_template('index.html') 
+    return render_template('index.html')
+
+@app.route('/api/<int:id>')
+def search_by_id():
+    pass
 
 
 if __name__ == "__main__":
