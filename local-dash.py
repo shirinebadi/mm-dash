@@ -3,7 +3,7 @@ from ffmpeg_streaming import Formats
 from ffmpeg_streaming import Formats, Bitrate, Representation, Size
 
 
-video = ffmpeg_streaming.input('media/2.mp4')
+video = ffmpeg_streaming.input('static/media/2.mp4')
 
 dash = video.dash(Formats.h264())
 
@@ -18,4 +18,4 @@ _4k    = Representation(Size(3840, 2160), Bitrate(17408 * 1024, 320 * 1024))
 
 dash = video.dash(Formats.h264())
 dash.representations(_144p, _240p, _360p, _480p, _720p, _1080p, _2k, _4k)
-dash.output('media/2/dash.mpd')
+dash.output('static/media/2/dash.mpd')
