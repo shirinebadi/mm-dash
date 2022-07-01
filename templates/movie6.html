@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="{{ url_for('static',filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>{{movie.title}}</h1>
+
+    <div class="grid-container">
+      <div class="item1">
+        <img
+          src="{{ url_for('static',filename='images/top'+movie.id+'.PNG') }}"
+          alt="top6"
+        />
+      </div>
+      <div class="item2">
+        <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+        <video class="video" id="video" autoplay controls></video>
+        <script>
+          var video = document.getElementById("video");
+          var videoSrc =
+            "https://mm.arvanvod.com/9ZXPENJGWD/aN8OZLnk9q/h_,144_200,240_400,360_800,480_1458,k.mp4.list/master.m3u8";
+          if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+          }
+        </script>
+      </div>
+      <div class="item3">
+        <p>{{movie.info}}</p>
+      </div>
+      <div class="item4">
+        <p>Director: {{movie.director}}</p>
+      </div>
+      <div class="item5">
+        <p>Rate: {{movie.star}}/10</p>
+      </div>
+    </div>
+  </body>
+</html>

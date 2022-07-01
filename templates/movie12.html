@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <link  href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet" />
+    <style>
+      video {
+          width: 640px;
+          height: 360px;
+      }
+  </style>
+  </head>
+  <body>
+    <h1>{{movie.title}}</h1>
+
+    <div class="grid-container">
+      <div class="item1">
+        <img src="{{ url_for('static',filename='images/top'+movie.id+'.PNG') }}" alt="top6" />
+      </div>
+      <div class="item2">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.4.0/dash.all.min.js"></script>
+      <video
+        class = "video"
+        data-dashjs-player
+        autoplay
+        src="{{ url_for('static',filename='media/'+movie.id+'/dash.mpd') }}"
+        controls
+        ></video>
+      </div>
+      <div class="item3">
+        <p>
+          {{movie.info}}
+        </p>
+      </div>
+      <div class="item4">
+        <p>Director: {{movie.director}}</p>
+      </div>
+      <div class="item5">
+        <p>Rate: {{movie.star}}/10</p>
+      </div>
+    </div>
+  </body>
+</html>

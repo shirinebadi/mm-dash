@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="{{ url_for('static',filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>{{movie.title}}</h1>
+
+    <div class="grid-container">
+      <div class="item1">
+        <img
+          src="{{ url_for('static',filename='images/top'+movie.id+'.PNG') }}"
+          alt="top3"
+        />
+      </div>
+      <div class="item2">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.4.0/dash.all.min.js"></script>
+        <video
+          class="video"
+          data-dashjs-player
+          autoplay
+          src="https://mm.arvanvod.com/9ZXPENJGWD/PogrGeDX6A/h_,144_200,240_400,k.mp4.list/manifest.mpd"
+          controls
+        ></video>
+      </div>
+      <div class="item3">
+        <p>{{movie.info}}</p>
+      </div>
+      <div class="item4">
+        <p>Director: {{movie.director}}</p>
+      </div>
+      <div class="item5">
+        <p>Rate: {{movie.star}}/10</p>
+      </div>
+    </div>
+  </body>
+</html>

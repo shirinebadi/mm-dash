@@ -1,0 +1,28 @@
+  body{
+    background-color:rgb(24, 24, 24, 0.9);
+  }
+
+  img {
+    width: 140px;
+    height: 200px;
+    margin-right: 10px;
+    padding: 5px;
+  }
+
+  a{
+      color: aliceblue;
+  }
+
+  .top-list {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-column-gap: 10px;
+  }
+
+  .poster {
+    text-align: center;
+  }

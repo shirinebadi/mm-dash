@@ -1,0 +1,54 @@
+body{
+  background-color:rgb(24, 24, 24, 0.9);
+}
+h1{
+  color: aliceblue;
+}
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+p {
+  text-align: left;
+  font-size: large;
+  color: aliceblue;
+}
+.item1 {
+  grid-area: poster;
+}
+.item2 {
+  grid-area: trailer;
+}
+.item3 {
+  grid-area: description;
+}
+.item4 {
+  grid-area: director;
+}
+.item5 {
+  grid-area: rate;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
+  grid-template-rows: 6fr 1fr 1fr;
+  grid-template-areas:
+    "poster poster trailer trailer trailer trailer"
+    "description description description description description description"
+    "director director director rate rate rate";
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.video{
+  width: 100%;
+  height: 100%;
+}
